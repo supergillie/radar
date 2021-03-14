@@ -31,4 +31,5 @@ export class ApiService {
     return this.httpClient.get<any[]>(this.SERVER_URL).pipe(retry(2), catchError(this.handleError));
   }
 
+
 }
