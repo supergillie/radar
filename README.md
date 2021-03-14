@@ -1,6 +1,15 @@
 # MyDreamApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+Teknikstack:
+
+https://www.techiediaries.com/angular-book-build-your-first-web-apps/
+
+https://www.freecodecamp.org/news/angular-8-tutorial-in-easy-steps/
+
+https://www.techiediaries.com/angular-11-tutorial-example-rest-crud-http-get-httpclient/
+
+https://material.angular.io/components/grid-list/api
 
 ## Development server
 
