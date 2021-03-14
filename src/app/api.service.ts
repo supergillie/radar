@@ -28,10 +28,7 @@ export class ApiService {
   }
 
   public sendGetRequest(){
-    return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
+    return this.httpClient.get<any[]>(this.SERVER_URL).pipe(retry(2), catchError(this.handleError));
   }
 
-  	public get(){
-  		return this.httpClient.get<any[]>(this.SERVER_URL);
-  	}
 }
