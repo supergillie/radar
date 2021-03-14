@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 
 import { throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -28,7 +28,8 @@ export class ApiService {
   }
 
   public sendGetRequest(){
-    return this.httpClient.get<any[]>(this.SERVER_URL).pipe(retry(2), catchError(this.handleError));
+    const options = { params: new HttpParams({fromString: "_page=1&_limit=20"}) };
+    return this.httpClient.get<any[]>(this.SERVER_URL, options).pipe(retry(2), catchError(this.handleError));
   }
 
 
