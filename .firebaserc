@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pekr-3dad2": {
+      "hosting": {
+        "my-dream-app": [
+          "pekr-3dad2"
+        ]
+      }
+    }
+  }
+}
