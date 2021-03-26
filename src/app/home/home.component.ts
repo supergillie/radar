@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../api.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { Product } from '../product';
+
 
 @Component({
 	selector: 'app-home',
@@ -10,13 +12,13 @@ import { Subject } from 'rxjs';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 	//products = [];
-	products:any[] = [];
+	products: Product[] = [];
   destroy$: Subject<boolean> = new Subject<boolean>();
 
 	constructor(private apiService: ApiService) { }
 
 	ngOnInit() {
-    this.apiService.sendGetRequest().pipe(takeUntil(this.destroy$)).subscribe((data: any[])=>
+    this.apiService.sendGetRequest().pipe(takeUntil(this.destroy$)).subscribe((data: Product[])=>
     {
 			console.log(data);
 			this.products = data;

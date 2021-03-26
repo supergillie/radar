@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http"
 
 import { throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Product } from './product';
 
 
 @Injectable({
@@ -28,8 +29,8 @@ export class ApiService {
   }
 
   public sendGetRequest(){
-    const options = { params: new HttpParams({fromString: "_page=1&_limit=20"}) };
-    return this.httpClient.get<any[]>(this.SERVER_URL, options).pipe(retry(2), catchError(this.handleError));
+    const options = { params: new HttpParams({fromString: "_page=1&_limit=13"}) };
+    return this.httpClient.get<Product[]>(this.SERVER_URL, options).pipe(retry(2), catchError(this.handleError));
   }
 
 
